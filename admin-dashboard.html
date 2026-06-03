@@ -11,174 +11,124 @@
 :root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-dark:#8B6914;--black:#000;--black2:#0a0a0a;--black3:#111;--black4:#161616;--black5:#1c1c1c;--white:#fff;--white2:#f0f0f0;--gray:#999;--gray2:#ccc;--red:#e74c3c;--green:#27ae60;--blue:#3498db}
 html,body{height:100%;font-family:'Rajdhani',sans-serif}
 body{background:var(--black2);color:var(--white2);display:flex;overflow:hidden}
-
-/* SIDEBAR */
-.sidebar{width:260px;background:var(--black3);border-right:1px solid rgba(201,168,76,.2);height:100vh;display:flex;flex-direction:column;position:fixed;left:0;top:0;z-index:100;transition:.3s}
-.sidebar-header{padding:1.5rem;border-bottom:1px solid rgba(201,168,76,.15);display:flex;align-items:center;gap:.8rem}
-.sidebar-logo{width:38px;height:38px;object-fit:contain}
-.sidebar-title{font-family:'Cinzel',serif;font-size:.8rem;color:var(--gold);font-weight:700;line-height:1.3}
-.sidebar-sub{font-size:.6rem;color:var(--gray);letter-spacing:.15em;text-transform:uppercase}
-
-.sidebar-user{padding:1rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.1);display:flex;align-items:center;gap:.8rem}
-.user-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:var(--black);font-family:'Cinzel',serif;flex-shrink:0}
-.user-info{overflow:hidden}
-.user-name{font-size:.85rem;color:var(--white2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.user-role{font-size:.65rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
-
-.sidebar-nav{flex:1;overflow-y:auto;padding:.8rem 0}
-.nav-section{padding:.5rem 1.5rem .3rem;font-family:'Orbitron',monospace;font-size:.58rem;color:var(--gray);letter-spacing:.2em;text-transform:uppercase}
-.nav-item{display:flex;align-items:center;gap:.8rem;padding:.75rem 1.5rem;color:var(--gray2);cursor:pointer;transition:.2s;border-left:3px solid transparent;font-size:.88rem;font-weight:500}
+.sidebar{width:255px;background:var(--black3);border-right:1px solid rgba(201,168,76,.2);height:100vh;display:flex;flex-direction:column;position:fixed;left:0;top:0;z-index:100;transition:.3s;overflow-y:auto}
+.sidebar-header{padding:1.2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.15);display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.sidebar-logo{width:36px;height:36px;object-fit:contain}
+.sidebar-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--gold);font-weight:700;line-height:1.2}
+.sidebar-sub{font-size:.58rem;color:var(--gray);letter-spacing:.15em;text-transform:uppercase}
+.sidebar-user{padding:.9rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.1);display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:var(--black);font-family:'Cinzel',serif;flex-shrink:0}
+.user-name{font-size:.82rem;color:var(--white2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.user-role{font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.sidebar-nav{flex:1;padding:.6rem 0}
+.nav-section{padding:.5rem 1.5rem .25rem;font-family:'Orbitron',monospace;font-size:.55rem;color:var(--gray);letter-spacing:.2em;text-transform:uppercase}
+.nav-item{display:flex;align-items:center;gap:.7rem;padding:.68rem 1.5rem;color:var(--gray2);cursor:pointer;transition:.2s;border-left:3px solid transparent;font-size:.85rem;font-weight:500}
 .nav-item:hover{color:var(--white2);background:rgba(201,168,76,.05);border-left-color:rgba(201,168,76,.4)}
 .nav-item.active{color:var(--gold);background:rgba(201,168,76,.08);border-left-color:var(--gold)}
-.nav-icon{font-size:1.1rem;width:20px;text-align:center}
-.nav-badge{margin-left:auto;background:var(--gold);color:var(--black);font-size:.6rem;padding:.15rem .45rem;border-radius:10px;font-weight:700}
-
-.sidebar-footer{padding:1rem 1.5rem;border-top:1px solid rgba(201,168,76,.1)}
+.nav-icon{font-size:1rem;width:18px;text-align:center}
+.sidebar-footer{padding:1rem 1.5rem;border-top:1px solid rgba(201,168,76,.1);flex-shrink:0}
 .logout-btn{display:flex;align-items:center;gap:.7rem;color:var(--red);cursor:pointer;font-size:.85rem;padding:.5rem;border-radius:4px;transition:.2s;width:100%;background:none;border:none}
 .logout-btn:hover{background:rgba(231,76,60,.08)}
-
-/* MAIN */
-.main{margin-left:260px;flex:1;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
-.topbar{background:var(--black3);border-bottom:1px solid rgba(201,168,76,.15);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
-.topbar-title{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--white)}
+.main{margin-left:255px;flex:1;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+.topbar{background:var(--black3);border-bottom:1px solid rgba(201,168,76,.15);padding:.9rem 1.8rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;flex-shrink:0}
+.topbar-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--white)}
 .topbar-title span{color:var(--gold)}
-.topbar-actions{display:flex;align-items:center;gap:1rem}
-.topbar-time{font-family:'Orbitron',monospace;font-size:.7rem;color:var(--gray)}
-.view-site-btn{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:.4rem .9rem;border-radius:3px;font-size:.78rem;font-family:'Rajdhani',sans-serif;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s;letter-spacing:.08em}
+.topbar-actions{display:flex;align-items:center;gap:.8rem}
+.topbar-time{font-family:'Orbitron',monospace;font-size:.68rem;color:var(--gray)}
+.view-site-btn{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:.38rem .8rem;border-radius:3px;font-size:.75rem;font-family:'Rajdhani',sans-serif;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s}
 .view-site-btn:hover{background:rgba(201,168,76,.2)}
-
-.content{padding:2rem;flex:1}
-
-/* SECTIONS */
-.section{display:none}
-.section.active{display:block}
-
-/* DASHBOARD */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:2rem}
-.stat-card{background:var(--black4);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:1.4rem;position:relative;overflow:hidden;transition:.3s}
+.mob-toggle{display:none;background:none;border:none;color:var(--gold);font-size:1.3rem;cursor:pointer}
+.content{padding:1.5rem;flex:1}
+.section{display:none}.section.active{display:block}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
+.stat-card{background:var(--black4);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:1.2rem;transition:.3s;position:relative;overflow:hidden}
 .stat-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-2px)}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.stat-icon{font-size:2rem;margin-bottom:.7rem;display:block}
-.stat-val{font-family:'Orbitron',monospace;font-size:1.8rem;color:var(--gold);font-weight:700;line-height:1;display:block}
-.stat-lbl{font-size:.78rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;margin-top:.3rem;display:block}
-
-.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.qa-btn{background:var(--black4);border:1px solid rgba(201,168,76,.18);border-radius:8px;padding:1.2rem;text-align:center;cursor:pointer;transition:.25s}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.stat-icon{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.stat-val{font-family:'Orbitron',monospace;font-size:1.6rem;color:var(--gold);font-weight:700;line-height:1;display:block}
+.stat-lbl{font-size:.72rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;margin-top:.25rem;display:block}
+.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-bottom:1.5rem}
+.qa-btn{background:var(--black4);border:1px solid rgba(201,168,76,.18);border-radius:8px;padding:1.1rem;text-align:center;cursor:pointer;transition:.25s}
 .qa-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.06);transform:translateY(-2px)}
-.qa-btn .qa-icon{font-size:1.8rem;display:block;margin-bottom:.5rem}
-.qa-btn .qa-label{font-size:.82rem;color:var(--gray2);font-weight:600}
-
-/* CARDS */
+.qa-btn .qa-icon{font-size:1.6rem;display:block;margin-bottom:.4rem}
+.qa-btn .qa-label{font-size:.8rem;color:var(--gray2);font-weight:600}
 .card{background:var(--black4);border:1px solid rgba(201,168,76,.18);border-radius:10px;margin-bottom:1.5rem;overflow:hidden}
-.card-head{padding:1.2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.12);display:flex;align-items:center;justify-content:space-between}
-.card-head h3{font-family:'Orbitron',monospace;font-size:.75rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
-.card-body{padding:1.5rem}
-
-/* FORM ELEMENTS */
-.form-group{margin-bottom:1.2rem}
-.form-group label{display:block;font-family:'Orbitron',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem}
-.form-control{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:var(--white2);padding:.75rem 1rem;font-family:'Rajdhani',sans-serif;font-size:.92rem;transition:.25s;outline:none}
+.card-head{padding:1rem 1.4rem;border-bottom:1px solid rgba(201,168,76,.12);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.card-head h3{font-family:'Orbitron',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+.card-body{padding:1.4rem}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-family:'Orbitron',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.45rem}
+.form-control{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:var(--white2);padding:.7rem .9rem;font-family:'Rajdhani',sans-serif;font-size:.9rem;transition:.25s;outline:none}
 .form-control:focus{border-color:var(--gold);background:rgba(201,168,76,.04)}
 .form-control::placeholder{color:var(--gray)}
-textarea.form-control{resize:vertical;min-height:100px}
+textarea.form-control{resize:vertical;min-height:90px}
 select.form-control{cursor:pointer}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-
-/* UPLOAD ZONE */
-.upload-zone{border:2px dashed rgba(201,168,76,.3);border-radius:10px;padding:2.5rem;text-align:center;cursor:pointer;transition:.3s;background:rgba(201,168,76,.02);position:relative}
-.upload-zone:hover,.upload-zone.dragover{border-color:var(--gold);background:rgba(201,168,76,.06)}
+.upload-zone{border:2px dashed rgba(201,168,76,.3);border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:.3s;background:rgba(201,168,76,.02);position:relative;overflow:hidden}
+.upload-zone:hover{border-color:var(--gold);background:rgba(201,168,76,.05)}
 .upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-icon{font-size:2.5rem;display:block;margin-bottom:.8rem;opacity:.6}
-.upload-zone h4{color:var(--white2);font-size:.95rem;margin-bottom:.3rem}
-.upload-zone p{color:var(--gray);font-size:.82rem}
-.upload-progress{background:rgba(255,255,255,.05);border-radius:4px;height:6px;margin-top:1rem;overflow:hidden;display:none}
-.upload-progress-bar{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:4px;transition:width .3s;width:0%}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.75rem 1.5rem;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.25s;border:none;outline:none}
+.upload-icon{font-size:2.2rem;display:block;margin-bottom:.6rem;opacity:.5}
+.upload-zone h4{color:var(--white2);font-size:.9rem;margin-bottom:.25rem}
+.upload-zone p{color:var(--gray);font-size:.78rem}
+.progress-wrap{background:rgba(255,255,255,.05);border-radius:4px;height:6px;margin-top:.8rem;overflow:hidden;display:none}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:4px;transition:width .3s;width:0%}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:.83rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.25s;border:none;outline:none}
 .btn-gold{background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--black)}
 .btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,.4)}
 .btn-out{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .btn-out:hover{background:rgba(201,168,76,.1)}
 .btn-red{background:rgba(231,76,60,.1);color:var(--red);border:1px solid rgba(231,76,60,.3)}
 .btn-red:hover{background:rgba(231,76,60,.2)}
-.btn-green{background:rgba(39,174,96,.1);color:var(--green);border:1px solid rgba(39,174,96,.3)}
-.btn-green:hover{background:rgba(39,174,96,.2)}
-.btn-sm{padding:.45rem .9rem;font-size:.75rem}
+.btn-sm{padding:.4rem .85rem;font-size:.73rem}
 .btn-full{width:100%;justify-content:center}
 .btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
-
-/* MEDIA GRID */
-.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.media-item{background:var(--black3);border:1px solid rgba(201,168,76,.15);border-radius:8px;overflow:hidden;position:relative;group}
-.media-thumb{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--black5);overflow:hidden}
+.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
+.media-item{background:var(--black3);border:1px solid rgba(201,168,76,.15);border-radius:8px;overflow:hidden}
+.media-thumb{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--black5);overflow:hidden;position:relative}
 .media-thumb img{width:100%;height:100%;object-fit:cover}
 .media-thumb video{width:100%;height:100%;object-fit:cover}
 .media-placeholder{font-size:2rem;opacity:.3}
-.media-info{padding:.7rem}
-.media-info p{font-size:.75rem;color:var(--gray2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.4rem}
-.media-actions{display:flex;gap:.4rem}
-.media-del{background:rgba(231,76,60,.1);color:var(--red);border:1px solid rgba(231,76,60,.2);padding:.2rem .5rem;border-radius:2px;font-size:.68rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;transition:.2s}
+.media-info{padding:.65rem}
+.media-info p{font-size:.72rem;color:var(--gray2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.35rem}
+.media-actions{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+.media-del{background:rgba(231,76,60,.1);color:var(--red);border:1px solid rgba(231,76,60,.2);padding:.18rem .45rem;border-radius:2px;font-size:.65rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;transition:.2s}
 .media-del:hover{background:rgba(231,76,60,.25)}
-
-/* POSTS TABLE */
+.cat-tag{font-size:.62rem;color:var(--gold);background:rgba(201,168,76,.08);padding:.15rem .4rem;border-radius:2px;border:1px solid rgba(201,168,76,.2)}
 .table{width:100%;border-collapse:collapse}
-.table th{font-family:'Orbitron',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.12em;text-align:left;padding:.75rem 1rem;background:rgba(201,168,76,.05);border-bottom:1px solid rgba(201,168,76,.15);text-transform:uppercase}
-.table td{padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);font-size:.85rem;color:var(--gray2);vertical-align:middle}
+.table th{font-family:'Orbitron',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.1em;text-align:left;padding:.7rem .9rem;background:rgba(201,168,76,.05);border-bottom:1px solid rgba(201,168,76,.15);text-transform:uppercase}
+.table td{padding:.7rem .9rem;border-bottom:1px solid rgba(255,255,255,.04);font-size:.83rem;color:var(--gray2);vertical-align:middle}
 .table tr:hover td{background:rgba(201,168,76,.03);color:var(--white2)}
 .table tr:last-child td{border-bottom:none}
-
-/* STATUS BADGES */
-.badge{display:inline-block;padding:.2rem .6rem;border-radius:2px;font-size:.68rem;font-family:'Orbitron',monospace;letter-spacing:.06em}
+.badge{display:inline-block;padding:.18rem .55rem;border-radius:2px;font-size:.65rem;font-family:'Orbitron',monospace;letter-spacing:.06em}
 .badge-active{background:rgba(39,174,96,.15);color:var(--green);border:1px solid rgba(39,174,96,.3)}
 .badge-draft{background:rgba(149,165,166,.1);color:var(--gray);border:1px solid rgba(149,165,166,.2)}
-.badge-new{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
-
-/* TOAST */
-.toast{position:fixed;bottom:2rem;right:2rem;z-index:9999;background:var(--black4);border:1px solid rgba(201,168,76,.3);border-radius:8px;padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem;transform:translateX(120%);transition:.3s;max-width:320px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.toast{position:fixed;bottom:1.8rem;right:1.8rem;z-index:9999;background:var(--black4);border:1px solid rgba(201,168,76,.3);border-radius:8px;padding:.9rem 1.4rem;display:flex;align-items:center;gap:.7rem;transform:translateX(120%);transition:.3s;max-width:300px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .toast.show{transform:translateX(0)}
-.toast-icon{font-size:1.3rem}
-.toast-msg{font-size:.88rem;color:var(--white2)}
+.toast-icon{font-size:1.2rem}
+.toast-msg{font-size:.85rem;color:var(--white2)}
 .toast.success{border-color:rgba(39,174,96,.4)}.toast.success .toast-icon{color:var(--green)}
 .toast.error{border-color:rgba(231,76,60,.4)}.toast.error .toast-icon{color:var(--red)}
-.toast.info{border-color:rgba(201,168,76,.4)}.toast.info .toast-icon{color:var(--gold)}
-
-/* LOADING */
-.loading{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.2);border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite}
+.toast.info .toast-icon{color:var(--gold)}
+.loading{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* EMPTY STATE */
-.empty-state{text-align:center;padding:3rem 2rem;color:var(--gray)}
-.empty-state .empty-icon{font-size:3rem;display:block;margin-bottom:1rem;opacity:.4}
-.empty-state p{font-size:.9rem;line-height:1.7}
-
-/* MOBILE HAMBURGER */
-.mob-toggle{display:none;background:none;border:none;color:var(--gold);font-size:1.4rem;cursor:pointer;padding:.3rem}
+.empty-state{text-align:center;padding:2.5rem 1.5rem;color:var(--gray)}
+.empty-icon{font-size:2.5rem;display:block;margin-bottom:.8rem;opacity:.4}
+.ownership-note{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:.9rem 1.2rem;display:flex;align-items:flex-start;gap:.7rem;margin-bottom:1.2rem;font-size:.83rem;color:var(--gray2)}
+.ownership-note a{color:var(--gold);text-decoration:none}
 .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .quick-actions{grid-template-columns:repeat(2,1fr)}
-  .media-grid{grid-template-columns:repeat(3,1fr)}
-}
+.upload-preview{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.preview-thumb{width:70px;height:70px;border-radius:4px;object-fit:cover;border:1px solid rgba(201,168,76,.3)}
+@media(max-width:1024px){.stats-row{grid-template-columns:repeat(2,1fr)}.media-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){
-  .sidebar{transform:translateX(-100%)}
-  .sidebar.open{transform:translateX(0)}
-  .sidebar-overlay.show{display:block}
-  .main{margin-left:0}
-  .mob-toggle{display:block}
-  .stats-row{grid-template-columns:1fr 1fr}
-  .quick-actions{grid-template-columns:1fr 1fr}
-  .media-grid{grid-template-columns:repeat(2,1fr)}
-  .form-row{grid-template-columns:1fr}
-  .content{padding:1rem}
+  .sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.show{display:block}.main{margin-left:0}.mob-toggle{display:block}
+  .stats-row{grid-template-columns:1fr 1fr}.quick-actions{grid-template-columns:1fr 1fr}
+  .media-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.content{padding:1rem}
 }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar-overlay" id="overlay" onclick="closeSidebar()"></div>
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
@@ -189,38 +139,37 @@ select.form-control{cursor:pointer}
     </div>
   </div>
   <div class="sidebar-user">
-    <div class="user-avatar" id="userInitials">Y</div>
+    <div class="user-avatar" id="userInitial">Y</div>
     <div class="user-info">
-      <div class="user-name" id="userEmail">Loading...</div>
+      <div class="user-name" id="userName">Loading...</div>
       <div class="user-role">Administrator</div>
     </div>
   </div>
   <nav class="sidebar-nav">
     <div class="nav-section">Main</div>
-    <div class="nav-item active" onclick="showSection('dashboard')"><span class="nav-icon">&#9778;</span>Dashboard</div>
+    <div class="nav-item active" onclick="showSec('dashboard',this)"><span class="nav-icon">&#9778;</span>Dashboard</div>
     <div class="nav-section">Content</div>
-    <div class="nav-item" onclick="showSection('gallery')"><span class="nav-icon">&#128247;</span>Gallery &amp; Photos</div>
-    <div class="nav-item" onclick="showSection('videos')"><span class="nav-icon">&#127909;</span>Videos &amp; Reels</div>
-    <div class="nav-item" onclick="showSection('certificates')"><span class="nav-icon">&#128196;</span>Certificates</div>
-    <div class="nav-item" onclick="showSection('news')"><span class="nav-icon">&#128240;</span>News &amp; Posts</div>
+    <div class="nav-item" onclick="showSec('gallery',this)"><span class="nav-icon">&#128247;</span>Gallery Photos</div>
+    <div class="nav-item" onclick="showSec('videos',this)"><span class="nav-icon">&#127909;</span>Videos &amp; Reels</div>
+    <div class="nav-item" onclick="showSec('certificates',this)"><span class="nav-icon">&#128196;</span>Certificates</div>
+    <div class="nav-item" onclick="showSec('news',this)"><span class="nav-icon">&#128240;</span>News &amp; Posts</div>
     <div class="nav-section">People</div>
-    <div class="nav-item" onclick="showSection('profiles')"><span class="nav-icon">&#128100;</span>Instructor Profiles</div>
+    <div class="nav-item" onclick="showSec('profiles',this)"><span class="nav-icon">&#128100;</span>Instructor Profiles</div>
     <div class="nav-section">Settings</div>
-    <div class="nav-item" onclick="showSection('social')"><span class="nav-icon">&#127760;</span>Social Media Links</div>
-    <div class="nav-item" onclick="showSection('contact')"><span class="nav-icon">&#128222;</span>Contact Info</div>
-    <div class="nav-item" onclick="showSection('password')"><span class="nav-icon">&#128272;</span>Change Password</div>
+    <div class="nav-item" onclick="showSec('social',this)"><span class="nav-icon">&#127760;</span>Social Media Links</div>
+    <div class="nav-item" onclick="showSec('contact',this)"><span class="nav-icon">&#128222;</span>Contact Info</div>
+    <div class="nav-item" onclick="showSec('password',this)"><span class="nav-icon">&#128272;</span>Change Password</div>
   </nav>
   <div class="sidebar-footer">
-    <button class="logout-btn" onclick="logOut()"><span>&#128682;</span>Logout</button>
+    <button class="logout-btn" onclick="doLogout()"><span>&#128682;</span>Logout</button>
   </div>
 </aside>
 
-<!-- MAIN -->
 <main class="main">
   <div class="topbar">
-    <div style="display:flex;align-items:center;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.8rem">
       <button class="mob-toggle" onclick="openSidebar()">&#9776;</button>
-      <div class="topbar-title" id="topbarTitle">Dashboard <span>Overview</span></div>
+      <div class="topbar-title" id="topTitle">Dashboard <span>Overview</span></div>
     </div>
     <div class="topbar-actions">
       <div class="topbar-time" id="clock"></div>
@@ -233,24 +182,23 @@ select.form-control{cursor:pointer}
     <!-- DASHBOARD -->
     <div class="section active" id="sec-dashboard">
       <div class="stats-row">
-        <div class="stat-card"><span class="stat-icon">&#128247;</span><span class="stat-val" id="stat-photos">0</span><span class="stat-lbl">Photos Uploaded</span></div>
-        <div class="stat-card"><span class="stat-icon">&#127909;</span><span class="stat-val" id="stat-videos">0</span><span class="stat-lbl">Videos Uploaded</span></div>
-        <div class="stat-card"><span class="stat-icon">&#128196;</span><span class="stat-val" id="stat-certs">0</span><span class="stat-lbl">Certificates</span></div>
-        <div class="stat-card"><span class="stat-icon">&#128240;</span><span class="stat-val" id="stat-posts">0</span><span class="stat-lbl">News Posts</span></div>
+        <div class="stat-card"><span class="stat-icon">&#128247;</span><span class="stat-val" id="s-photos">0</span><span class="stat-lbl">Photos</span></div>
+        <div class="stat-card"><span class="stat-icon">&#127909;</span><span class="stat-val" id="s-videos">0</span><span class="stat-lbl">Videos</span></div>
+        <div class="stat-card"><span class="stat-icon">&#128196;</span><span class="stat-val" id="s-certs">0</span><span class="stat-lbl">Certificates</span></div>
+        <div class="stat-card"><span class="stat-icon">&#128240;</span><span class="stat-val" id="s-posts">0</span><span class="stat-lbl">Posts</span></div>
       </div>
-      <div style="margin-bottom:1rem"><h3 style="font-family:'Cinzel',serif;color:var(--white);font-size:1rem;margin-bottom:1rem">Quick Actions</h3></div>
       <div class="quick-actions">
-        <div class="qa-btn" onclick="showSection('gallery')"><span class="qa-icon">&#128247;</span><div class="qa-label">Upload Photo</div></div>
-        <div class="qa-btn" onclick="showSection('videos')"><span class="qa-icon">&#127909;</span><div class="qa-label">Upload Video/Reel</div></div>
-        <div class="qa-btn" onclick="showSection('certificates')"><span class="qa-icon">&#128196;</span><div class="qa-label">Upload Certificate</div></div>
-        <div class="qa-btn" onclick="showSection('news')"><span class="qa-icon">&#9997;</span><div class="qa-label">Create Post</div></div>
-        <div class="qa-btn" onclick="showSection('profiles')"><span class="qa-icon">&#128100;</span><div class="qa-label">Edit Profiles</div></div>
-        <div class="qa-btn" onclick="showSection('social')"><span class="qa-icon">&#127760;</span><div class="qa-label">Update Social Links</div></div>
+        <div class="qa-btn" onclick="showSec('gallery',null)"><span class="qa-icon">&#128247;</span><div class="qa-label">Upload Photo</div></div>
+        <div class="qa-btn" onclick="showSec('videos',null)"><span class="qa-icon">&#127909;</span><div class="qa-label">Add Video/Reel</div></div>
+        <div class="qa-btn" onclick="showSec('certificates',null)"><span class="qa-icon">&#128196;</span><div class="qa-label">Upload Certificate</div></div>
+        <div class="qa-btn" onclick="showSec('news',null)"><span class="qa-icon">&#9997;</span><div class="qa-label">Create Post</div></div>
+        <div class="qa-btn" onclick="showSec('profiles',null)"><span class="qa-icon">&#128100;</span><div class="qa-label">Edit Profiles</div></div>
+        <div class="qa-btn" onclick="showSec('social',null)"><span class="qa-icon">&#127760;</span><div class="qa-label">Social Links</div></div>
       </div>
       <div class="card">
-        <div class="card-head"><h3>&#128240; Recent Activity</h3></div>
-        <div class="card-body" id="recentActivity">
-          <div class="empty-state"><span class="empty-icon">&#128203;</span><p>Koi activity nahi abhi tak.<br>Pehla content upload karo!</p></div>
+        <div class="card-head"><h3>&#128203; Recent Uploads</h3></div>
+        <div class="card-body" id="recentList">
+          <div class="empty-state"><span class="empty-icon">&#128203;</span><p>Koi content nahi abhi.<br>Upar se upload karo!</p></div>
         </div>
       </div>
     </div>
@@ -258,12 +206,12 @@ select.form-control{cursor:pointer}
     <!-- GALLERY -->
     <div class="section" id="sec-gallery">
       <div class="card">
-        <div class="card-head"><h3>&#128247; Upload Photos</h3></div>
+        <div class="card-head"><h3>&#128247; Photos Upload Karo</h3></div>
         <div class="card-body">
           <div class="form-row" style="margin-bottom:1rem">
             <div class="form-group" style="margin:0">
               <label>Category</label>
-              <select class="form-control" id="photoCategory">
+              <select class="form-control" id="photoCat">
                 <option value="academy">Academy Activities</option>
                 <option value="training">Training Sessions</option>
                 <option value="founder">Founder</option>
@@ -272,28 +220,29 @@ select.form-control{cursor:pointer}
                 <option value="students">Students</option>
                 <option value="events">Events</option>
                 <option value="fitness">Fitness</option>
-                <option value="fitchachai">Fit Chachai Mission</option>
+                <option value="fitchachai">Fit Chachai</option>
               </select>
             </div>
             <div class="form-group" style="margin:0">
-              <label>Caption (Optional)</label>
-              <input type="text" class="form-control" id="photoCaption" placeholder="Photo ka description...">
+              <label>Caption</label>
+              <input type="text" class="form-control" id="photoCaption" placeholder="Photo description...">
             </div>
           </div>
           <div class="upload-zone" id="photoZone">
-            <input type="file" id="photoFile" accept="image/*" multiple onchange="uploadPhotos()">
+            <input type="file" id="photoFile" accept="image/*" multiple onchange="handlePhotoUpload()">
             <span class="upload-icon">&#128247;</span>
             <h4>Photos Yahan Drop Karo</h4>
-            <p>ya click karke select karo &bull; JPG, PNG, WEBP &bull; Max 5MB each</p>
-            <div class="upload-progress" id="photoProgress"><div class="upload-progress-bar" id="photoBar"></div></div>
+            <p>JPG, PNG, WEBP &bull; Multiple select kar sakte ho &bull; Max 10MB each</p>
+            <div class="progress-wrap" id="photoProg"><div class="progress-bar" id="photoBar"></div></div>
           </div>
+          <div class="upload-preview" id="photoPreview"></div>
         </div>
       </div>
       <div class="card">
         <div class="card-head">
           <h3>&#128444; Uploaded Photos</h3>
-          <select class="form-control" style="width:180px;padding:.4rem .8rem;font-size:.8rem" onchange="filterMedia('photo',this.value)">
-            <option value="all">All Categories</option>
+          <select class="form-control" style="width:160px;padding:.35rem .7rem;font-size:.78rem" onchange="loadPhotos(this.value)">
+            <option value="all">All</option>
             <option value="academy">Academy</option>
             <option value="training">Training</option>
             <option value="founder">Founder</option>
@@ -301,11 +250,12 @@ select.form-control{cursor:pointer}
             <option value="sunil">Sunil</option>
             <option value="students">Students</option>
             <option value="events">Events</option>
+            <option value="fitchachai">Fit Chachai</option>
           </select>
         </div>
         <div class="card-body">
           <div class="media-grid" id="photoGrid">
-            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128247;</span><p>Koi photo nahi abhi.<br>Upar se upload karo!</p></div>
+            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128247;</span><p>Koi photo nahi</p></div>
           </div>
         </div>
       </div>
@@ -314,45 +264,37 @@ select.form-control{cursor:pointer}
     <!-- VIDEOS -->
     <div class="section" id="sec-videos">
       <div class="card">
-        <div class="card-head"><h3>&#127909; Upload Videos &amp; Reels</h3></div>
+        <div class="card-head"><h3>&#127909; Video / Reel Add Karo</h3></div>
         <div class="card-body">
           <div class="form-row" style="margin-bottom:1rem">
             <div class="form-group" style="margin:0">
               <label>Video Title</label>
-              <input type="text" class="form-control" id="videoTitle" placeholder="Video ka naam...">
+              <input type="text" class="form-control" id="vidTitle" placeholder="Video ka naam...">
             </div>
             <div class="form-group" style="margin:0">
               <label>Category</label>
-              <select class="form-control" id="videoCategory">
+              <select class="form-control" id="vidCat">
                 <option value="training">Training</option>
                 <option value="events">Events</option>
                 <option value="fitchachai">Fit Chachai</option>
-                <option value="academy">Academy</option>
                 <option value="reels">Reels</option>
+                <option value="academy">Academy</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label>YouTube / Instagram Link (Recommended)</label>
-            <input type="url" class="form-control" id="videoUrl" placeholder="https://youtube.com/watch?v=... ya Instagram reel link">
-            <p style="color:var(--gray);font-size:.78rem;margin-top:.4rem">&#128161; YouTube link dene se hosting cost bachta hai</p>
+            <label>YouTube / Instagram Reel Link</label>
+            <input type="url" class="form-control" id="vidUrl" placeholder="https://youtube.com/watch?v=...">
+            <p style="color:var(--gray);font-size:.76rem;margin-top:.3rem">&#128161; YouTube link recommended — fast load, no storage use</p>
           </div>
-          <div style="text-align:center;margin:.5rem 0;color:var(--gray);font-size:.82rem">— ya direct video file upload karo —</div>
-          <div class="upload-zone">
-            <input type="file" id="videoFile" accept="video/*" onchange="uploadVideo()">
-            <span class="upload-icon">&#127909;</span>
-            <h4>Video File Upload Karo</h4>
-            <p>MP4, MOV &bull; Max 50MB &bull; Reels ke liye YouTube link use karo</p>
-            <div class="upload-progress" id="videoProgress"><div class="upload-progress-bar" id="videoBar"></div></div>
-          </div>
-          <button class="btn btn-gold btn-full" style="margin-top:1rem" onclick="saveVideo()">&#127909; Save Video</button>
+          <button class="btn btn-gold btn-full" onclick="saveVideo()">&#127909; Save Video</button>
         </div>
       </div>
       <div class="card">
-        <div class="card-head"><h3>&#127909; Uploaded Videos</h3></div>
+        <div class="card-head"><h3>&#127909; All Videos</h3></div>
         <div class="card-body">
           <div class="media-grid" id="videoGrid">
-            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#127909;</span><p>Koi video nahi abhi.<br>Upar se upload karo!</p></div>
+            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#127909;</span><p>Koi video nahi</p></div>
           </div>
         </div>
       </div>
@@ -361,12 +303,12 @@ select.form-control{cursor:pointer}
     <!-- CERTIFICATES -->
     <div class="section" id="sec-certificates">
       <div class="card">
-        <div class="card-head"><h3>&#128196; Upload Certificate / Document</h3></div>
+        <div class="card-head"><h3>&#128196; Certificate Upload Karo</h3></div>
         <div class="card-body">
           <div class="form-row" style="margin-bottom:1rem">
             <div class="form-group" style="margin:0">
               <label>Certificate Name</label>
-              <input type="text" class="form-control" id="certName" placeholder="Certificate ka naam...">
+              <input type="text" class="form-control" id="certName" placeholder="Certificate naam...">
             </div>
             <div class="form-group" style="margin:0">
               <label>Belongs To</label>
@@ -390,18 +332,18 @@ select.form-control{cursor:pointer}
             </div>
           </div>
           <div class="upload-zone">
-            <input type="file" id="certFile" accept="image/*,.pdf" onchange="uploadCert()">
+            <input type="file" id="certFile" accept="image/*,.pdf" onchange="handleCertUpload()">
             <span class="upload-icon">&#128196;</span>
             <h4>Certificate Upload Karo</h4>
-            <p>Image (JPG/PNG) ya PDF &bull; Watermark automatically add hoga</p>
-            <div class="upload-progress" id="certProgress"><div class="upload-progress-bar" id="certBar"></div></div>
+            <p>Image (JPG/PNG) ya PDF &bull; Max 10MB</p>
+            <div class="progress-wrap" id="certProg"><div class="progress-bar" id="certBar"></div></div>
           </div>
         </div>
       </div>
       <div class="card">
         <div class="card-head">
-          <h3>&#128196; Uploaded Certificates</h3>
-          <select class="form-control" style="width:180px;padding:.4rem .8rem;font-size:.8rem" onchange="filterMedia('cert',this.value)">
+          <h3>&#128196; All Certificates</h3>
+          <select class="form-control" style="width:160px;padding:.35rem .7rem;font-size:.78rem" onchange="loadCerts(this.value)">
             <option value="all">All</option>
             <option value="founder">Founder</option>
             <option value="sanjay">Sanjay Jogi</option>
@@ -411,25 +353,25 @@ select.form-control{cursor:pointer}
         </div>
         <div class="card-body">
           <div class="media-grid" id="certGrid">
-            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128196;</span><p>Koi certificate nahi abhi.</p></div>
+            <div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128196;</span><p>Koi certificate nahi</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- NEWS & POSTS -->
+    <!-- NEWS -->
     <div class="section" id="sec-news">
       <div class="card">
-        <div class="card-head"><h3>&#9997; New Post / News Create Karo</h3></div>
+        <div class="card-head"><h3>&#9997; New Post Create Karo</h3></div>
         <div class="card-body">
           <div class="form-group">
             <label>Post Title</label>
-            <input type="text" class="form-control" id="postTitle" placeholder="Post ka heading...">
+            <input type="text" class="form-control" id="postTitle" placeholder="Post heading...">
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Category</label>
-              <select class="form-control" id="postCategory">
+              <select class="form-control" id="postCat">
                 <option value="news">News</option>
                 <option value="achievement">Achievement</option>
                 <option value="event">Event</option>
@@ -447,15 +389,7 @@ select.form-control{cursor:pointer}
           </div>
           <div class="form-group">
             <label>Content</label>
-            <textarea class="form-control" id="postContent" placeholder="Post ka content yahan likho..." style="min-height:150px"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Featured Image (Optional)</label>
-            <div class="upload-zone" style="padding:1.5rem">
-              <input type="file" id="postImage" accept="image/*">
-              <span style="font-size:1.5rem">&#128247;</span>
-              <p style="margin-top:.5rem;color:var(--gray);font-size:.82rem">Post image upload karo (optional)</p>
-            </div>
+            <textarea class="form-control" id="postContent" placeholder="Post content yahan likho..." style="min-height:130px"></textarea>
           </div>
           <button class="btn btn-gold btn-full" onclick="savePost()">&#128240; Publish Post</button>
         </div>
@@ -463,9 +397,9 @@ select.form-control{cursor:pointer}
       <div class="card">
         <div class="card-head"><h3>&#128203; All Posts</h3></div>
         <div class="card-body" style="overflow-x:auto">
-          <table class="table" id="postsTable">
-            <thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
-            <tbody id="postsList"><tr><td colspan="5"><div class="empty-state"><span class="empty-icon">&#128240;</span><p>Koi post nahi abhi.</p></div></td></tr></tbody>
+          <table class="table">
+            <thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="postsList"><tr><td colspan="5"><div class="empty-state"><span class="empty-icon">&#128240;</span><p>Koi post nahi</p></div></td></tr></tbody>
           </table>
         </div>
       </div>
@@ -474,576 +408,490 @@ select.form-control{cursor:pointer}
     <!-- PROFILES -->
     <div class="section" id="sec-profiles">
       <div class="card">
-        <div class="card-head"><h3>&#128100; Instructor Profile Update Karo</h3></div>
+        <div class="card-head"><h3>&#128100; Profile Update Karo</h3></div>
         <div class="card-body">
           <div class="form-group">
             <label>Select Instructor</label>
-            <select class="form-control" id="profileSelect" onchange="loadProfile()">
+            <select class="form-control" id="profSelect" onchange="loadProfile()">
               <option value="founder">Yuvraj Singh Thakur (Founder)</option>
               <option value="sanjay">Sanjay Jogi</option>
               <option value="sunil">Sunil Napit</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Profile Photo Upload</label>
+            <label>Profile Photo Upload (Cloudinary)</label>
             <div class="upload-zone" style="padding:1.5rem">
-              <input type="file" id="profilePhoto" accept="image/*" onchange="uploadProfilePhoto()">
-              <span style="font-size:2rem">&#128100;</span>
-              <p style="margin-top:.5rem;color:var(--gray);font-size:.82rem">Profile photo upload karo — website pe automatically update hoga</p>
-              <div class="upload-progress" id="profileProgress"><div class="upload-progress-bar" id="profileBar"></div></div>
+              <input type="file" id="profPhoto" accept="image/*" onchange="uploadProfilePhoto()">
+              <span style="font-size:1.8rem">&#128100;</span>
+              <p style="margin-top:.4rem;color:var(--gray);font-size:.8rem">Profile photo upload — website pe auto update hoga</p>
+              <div class="progress-wrap" id="profProg"><div class="progress-bar" id="profBar"></div></div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Name</label>
-              <input type="text" class="form-control" id="profName" placeholder="Full name">
+              <input type="text" class="form-control" id="profName">
             </div>
             <div class="form-group">
-              <label>Role / Title</label>
-              <input type="text" class="form-control" id="profRole" placeholder="e.g. Head Coach">
+              <label>Role</label>
+              <input type="text" class="form-control" id="profRole">
             </div>
           </div>
           <div class="form-group">
-            <label>Bio / Introduction</label>
-            <textarea class="form-control" id="profBio" placeholder="Profile description..."></textarea>
-          </div>
-          <div class="form-group">
-            <label>Achievements (ek line mein ek)</label>
-            <textarea class="form-control" id="profAchievements" placeholder="Black Belt Karate&#10;State Karate Player&#10;National Wushu..." style="min-height:100px"></textarea>
+            <label>Bio</label>
+            <textarea class="form-control" id="profBio"></textarea>
           </div>
           <button class="btn btn-gold btn-full" onclick="saveProfile()">&#128100; Save Profile</button>
         </div>
       </div>
     </div>
 
-    <!-- SOCIAL LINKS -->
+    <!-- SOCIAL -->
     <div class="section" id="sec-social">
       <div class="card">
-        <div class="card-head"><h3>&#127760; Social Media Links Update Karo</h3></div>
+        <div class="card-head"><h3>&#127760; Social Media Links</h3></div>
         <div class="card-body">
-          <div class="form-group">
-            <label>&#128216; Facebook Page URL</label>
-            <input type="url" class="form-control" id="socialFb" placeholder="https://facebook.com/...">
-          </div>
-          <div class="form-group">
-            <label>&#128247; Instagram Profile URL</label>
-            <input type="url" class="form-control" id="socialIg" placeholder="https://instagram.com/...">
-          </div>
-          <div class="form-group">
-            <label>&#9654; YouTube Channel URL</label>
-            <input type="url" class="form-control" id="socialYt" placeholder="https://youtube.com/...">
-          </div>
-          <div class="form-group">
-            <label>&#128172; WhatsApp Number</label>
-            <input type="text" class="form-control" id="socialWa" placeholder="919XXXXXXXXX (country code ke saath)">
-          </div>
-          <div class="form-group">
-            <label>&#128188; LinkedIn URL</label>
-            <input type="url" class="form-control" id="socialLi" placeholder="https://linkedin.com/in/...">
-          </div>
-          <button class="btn btn-gold btn-full" onclick="saveSocial()">&#127760; Save Social Links</button>
+          <div class="form-group"><label>&#128216; Facebook</label><input type="url" class="form-control" id="sFb" placeholder="https://facebook.com/..."></div>
+          <div class="form-group"><label>&#128247; Instagram</label><input type="url" class="form-control" id="sIg" placeholder="https://instagram.com/..."></div>
+          <div class="form-group"><label>&#9654; YouTube</label><input type="url" class="form-control" id="sYt" placeholder="https://youtube.com/..."></div>
+          <div class="form-group"><label>&#128172; WhatsApp Number</label><input type="text" class="form-control" id="sWa" placeholder="918959992195"></div>
+          <div class="form-group"><label>&#128188; LinkedIn</label><input type="url" class="form-control" id="sLi" placeholder="https://linkedin.com/in/..."></div>
+          <button class="btn btn-gold btn-full" onclick="saveSocial()">&#127760; Save Links</button>
         </div>
       </div>
     </div>
 
-    <!-- CONTACT INFO -->
+    <!-- CONTACT -->
     <div class="section" id="sec-contact">
       <div class="card">
-        <div class="card-head"><h3>&#128222; Contact Information Update Karo</h3></div>
+        <div class="card-head"><h3>&#128222; Contact Info</h3></div>
         <div class="card-body">
           <div class="form-row">
-            <div class="form-group">
-              <label>Contact Person Name</label>
-              <input type="text" class="form-control" id="contactName" value="Yuvraj Singh Thakur">
-            </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="text" class="form-control" id="contactPhone" value="8959992195">
-            </div>
+            <div class="form-group"><label>Name</label><input type="text" class="form-control" id="cName" value="Yuvraj Singh Thakur"></div>
+            <div class="form-group"><label>Phone</label><input type="text" class="form-control" id="cPhone" value="8959992195"></div>
           </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" class="form-control" id="contactEmail" value="ayuvrajsingh90@gmail.com">
-          </div>
-          <div class="form-group">
-            <label>Academy Address</label>
-            <textarea class="form-control" id="contactAddress">Club Ground, Chachai, District Anuppur, Madhya Pradesh — 484224</textarea>
-          </div>
-          <button class="btn btn-gold btn-full" onclick="saveContact()">&#128222; Save Contact Info</button>
+          <div class="form-group"><label>Email</label><input type="email" class="form-control" id="cEmail" value="ayuvrajsingh90@gmail.com"></div>
+          <div class="form-group"><label>Address</label><textarea class="form-control" id="cAddr">Club Ground, Chachai, District Anuppur, Madhya Pradesh — 484224</textarea></div>
+          <button class="btn btn-gold btn-full" onclick="saveContact()">&#128222; Save Contact</button>
         </div>
       </div>
     </div>
 
-    <!-- CHANGE PASSWORD -->
+    <!-- PASSWORD -->
     <div class="section" id="sec-password">
-      <div class="card" style="max-width:500px">
-        <div class="card-head"><h3>&#128272; Password Change Karo</h3></div>
+      <div class="card" style="max-width:480px">
+        <div class="card-head"><h3>&#128272; Change Password</h3></div>
         <div class="card-body">
-          <div class="form-group">
-            <label>New Password</label>
-            <input type="password" class="form-control" id="newPw" placeholder="Naya password...">
-          </div>
-          <div class="form-group">
-            <label>Confirm New Password</label>
-            <input type="password" class="form-control" id="confirmPw" placeholder="Password confirm karo...">
-          </div>
-          <button class="btn btn-gold btn-full" onclick="changePassword()">&#128272; Password Update Karo</button>
+          <div class="form-group"><label>New Password</label><input type="password" class="form-control" id="newPw" placeholder="Naya password..."></div>
+          <div class="form-group"><label>Confirm Password</label><input type="password" class="form-control" id="confPw" placeholder="Confirm karo..."></div>
+          <button class="btn btn-gold btn-full" onclick="changePw()">&#128272; Update Password</button>
         </div>
       </div>
     </div>
 
-  </div><!-- /content -->
+  </div>
 </main>
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <span class="toast-icon" id="toastIcon">&#10003;</span>
-  <span class="toast-msg" id="toastMsg"></span>
-</div>
+<div class="toast" id="toast"><span class="toast-icon" id="tIcon">&#10003;</span><span class="toast-msg" id="tMsg"></span></div>
 
 <!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut, updatePassword } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, setDoc, getDoc, serverTimestamp, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCeq6y-144ekC0ZAnsbGceOEIVrK0uLqfY",
-  authDomain: "thrive-vanguard-academy.firebaseapp.com",
-  projectId: "thrive-vanguard-academy",
-  storageBucket: "thrive-vanguard-academy.firebasestorage.app",
-  messagingSenderId: "679255829846",
-  appId: "1:679255829846:web:77542088955134f408faf7"
-};
-
-const app = initializeApp(firebaseConfig);
+const app = initializeApp({
+  apiKey:"AIzaSyCeq6y-144ekC0ZAnsbGceOEIVrK0uLqfY",
+  authDomain:"thrive-vanguard-academy.firebaseapp.com",
+  projectId:"thrive-vanguard-academy",
+  storageBucket:"thrive-vanguard-academy.firebasestorage.app",
+  messagingSenderId:"679255829846",
+  appId:"1:679255829846:web:77542088955134f408faf7"
+});
 const auth = getAuth(app);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
-// AUTH CHECK
+// Cloudinary config
+const CLD = {
+  cloud: 'dbkaysc6w',
+  preset: 'thrive_vanguard',
+  apiKey: '128438253324187'
+};
+
 onAuthStateChanged(auth, user => {
-  if (!user) {
-    window.location.href = 'admin-login.html';
-    return;
-  }
-  document.getElementById('userEmail').textContent = user.email;
-  document.getElementById('userInitials').textContent = user.email[0].toUpperCase();
-  loadDashboardStats();
+  if (!user) { window.location.href='admin-login.html'; return; }
+  document.getElementById('userName').textContent = user.email;
+  document.getElementById('userInitial').textContent = user.email[0].toUpperCase();
+  loadStats();
   loadSocialLinks();
+  loadContactInfo();
 });
 
-// LOGOUT
-window.logOut = async () => {
-  await signOut(auth);
-  window.location.href = 'admin-login.html';
-};
+window.doLogout = async () => { await signOut(auth); window.location.href='admin-login.html'; };
 
 // TOAST
-window.showToast = (msg, type='info') => {
-  const t = document.getElementById('toast');
-  const icons = {success:'&#10003;', error:'&#9888;', info:'&#128161;'};
-  t.className = 'toast ' + type;
-  document.getElementById('toastIcon').innerHTML = icons[type] || icons.info;
-  document.getElementById('toastMsg').textContent = msg;
+window.toast = (msg,type='info') => {
+  const t=document.getElementById('toast');
+  const icons={success:'&#10003;',error:'&#9888;',info:'&#128161;'};
+  t.className='toast '+type;
+  document.getElementById('tIcon').innerHTML=icons[type]||icons.info;
+  document.getElementById('tMsg').textContent=msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3500);
+  setTimeout(()=>t.classList.remove('show'),3500);
 };
 
-// STATS
-async function loadDashboardStats() {
-  try {
-    const photos = await getDocs(collection(db,'gallery'));
-    const videos = await getDocs(collection(db,'videos'));
-    const certs = await getDocs(collection(db,'certificates'));
-    const posts = await getDocs(collection(db,'posts'));
-    document.getElementById('stat-photos').textContent = photos.size;
-    document.getElementById('stat-videos').textContent = videos.size;
-    document.getElementById('stat-certs').textContent = certs.size;
-    document.getElementById('stat-posts').textContent = posts.size;
-  } catch(e) { console.log(e); }
+// CLOUDINARY UPLOAD
+async function uploadToCloudinary(file, folder='gallery') {
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('upload_preset', CLD.preset);
+  fd.append('folder', folder);
+  const res = await fetch(`https://api.cloudinary.com/v1_1/${CLD.cloud}/auto/upload`, {method:'POST', body:fd});
+  if (!res.ok) throw new Error('Upload failed');
+  return await res.json();
 }
 
-// UPLOAD PHOTO
-window.uploadPhotos = async () => {
+// STATS
+async function loadStats() {
+  try {
+    const [p,v,c,po] = await Promise.all([
+      getDocs(collection(db,'gallery')),
+      getDocs(collection(db,'videos')),
+      getDocs(collection(db,'certificates')),
+      getDocs(collection(db,'posts'))
+    ]);
+    document.getElementById('s-photos').textContent = p.size;
+    document.getElementById('s-videos').textContent = v.size;
+    document.getElementById('s-certs').textContent = c.size;
+    document.getElementById('s-posts').textContent = po.size;
+  } catch(e){}
+}
+
+// PHOTO UPLOAD
+window.handlePhotoUpload = async () => {
   const files = document.getElementById('photoFile').files;
-  const category = document.getElementById('photoCategory').value;
+  const cat = document.getElementById('photoCat').value;
   const caption = document.getElementById('photoCaption').value;
   if (!files.length) return;
 
-  const prog = document.getElementById('photoProgress');
+  const prog = document.getElementById('photoProg');
   const bar = document.getElementById('photoBar');
   prog.style.display = 'block';
 
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    if (file.size > 5 * 1024 * 1024) { showToast(file.name + ' — 5MB se bada hai!', 'error'); continue; }
-    const storRef = ref(storage, `gallery/${Date.now()}_${file.name}`);
-    const task = uploadBytesResumable(storRef, file);
-    await new Promise((res, rej) => {
-      task.on('state_changed',
-        snap => { bar.style.width = (snap.bytesTransferred/snap.totalBytes*100) + '%'; },
-        rej,
-        async () => {
-          const url = await getDownloadURL(task.snapshot.ref);
-          await addDoc(collection(db,'gallery'), {url, category, caption, name: file.name, type:'photo', createdAt: serverTimestamp()});
-          res();
-        }
-      );
-    });
+  let done = 0;
+  for (const file of files) {
+    try {
+      bar.style.width = Math.round((done/files.length)*100)+'%';
+      const result = await uploadToCloudinary(file, 'gallery');
+      await addDoc(collection(db,'gallery'), {
+        url: result.secure_url,
+        publicId: result.public_id,
+        category: cat,
+        caption: caption || file.name,
+        width: result.width,
+        height: result.height,
+        createdAt: serverTimestamp()
+      });
+      done++;
+      bar.style.width = Math.round((done/files.length)*100)+'%';
+    } catch(e) {
+      toast('Upload failed: ' + e.message, 'error');
+    }
   }
-  prog.style.display = 'none'; bar.style.width = '0%';
-  showToast('Photos upload ho gayi!', 'success');
-  loadPhotos();
-  loadDashboardStats();
+  prog.style.display='none'; bar.style.width='0%';
+  toast(done + ' photo(s) upload ho gayi!', 'success');
+  document.getElementById('photoFile').value='';
+  document.getElementById('photoCaption').value='';
+  loadPhotos('all');
+  loadStats();
 };
 
 // LOAD PHOTOS
-async function loadPhotos(filterCat='all') {
+window.loadPhotos = async (filter='all') => {
   const grid = document.getElementById('photoGrid');
   grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:2rem"><div class="loading"></div></div>';
   try {
     const snap = await getDocs(query(collection(db,'gallery'), orderBy('createdAt','desc')));
-    const items = snap.docs.filter(d => filterCat==='all' || d.data().category===filterCat);
-    if (!items.length) { grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128247;</span><p>Koi photo nahi</p></div>'; return; }
-    grid.innerHTML = items.map(d => {
-      const {url,name,category,caption} = d.data();
+    const items = snap.docs.filter(d => filter==='all' || d.data().category===filter);
+    if (!items.length) { grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128247;</span><p>Koi photo nahi</p></div>'; return; }
+    grid.innerHTML = items.map(d=>{
+      const {url,caption,category} = d.data();
       return `<div class="media-item">
-        <div class="media-thumb"><img src="${url}" alt="${name}" loading="lazy"></div>
-        <div class="media-info"><p title="${caption||name}">${caption||name}</p>
-        <div class="media-actions">
-          <span style="font-size:.68rem;color:var(--gold);background:rgba(201,168,76,.08);padding:.2rem .5rem;border-radius:2px">${category}</span>
-          <button class="media-del" onclick="deleteItem('gallery','${d.id}','${url}')">&#128465;</button>
+        <div class="media-thumb"><img src="${url}" loading="lazy" alt="${caption}"></div>
+        <div class="media-info"><p title="${caption}">${caption}</p>
+        <div class="media-actions"><span class="cat-tag">${category}</span>
+        <button class="media-del" onclick="delItem('gallery','${d.id}','${d.data().publicId}')">&#128465;</button>
         </div></div></div>`;
     }).join('');
-  } catch(e) { grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><p>Load nahi ho raha — Storage upgrade karo</p></div>'; }
-}
-
-// SAVE VIDEO
-window.saveVideo = async () => {
-  const title = document.getElementById('videoTitle').value.trim();
-  const category = document.getElementById('videoCategory').value;
-  const url = document.getElementById('videoUrl').value.trim();
-  if (!title) { showToast('Title dalo!', 'error'); return; }
-  if (!url) { showToast('YouTube ya video link dalo!', 'error'); return; }
-  await addDoc(collection(db,'videos'), {title, category, url, type:'video', createdAt: serverTimestamp()});
-  showToast('Video save ho gaya!', 'success');
-  document.getElementById('videoTitle').value = '';
-  document.getElementById('videoUrl').value = '';
-  loadVideos();
-  loadDashboardStats();
+  } catch(e){ grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><p>Load error</p></div>'; }
 };
 
-// LOAD VIDEOS
-async function loadVideos() {
-  const grid = document.getElementById('videoGrid');
-  try {
-    const snap = await getDocs(query(collection(db,'videos'), orderBy('createdAt','desc')));
-    if (!snap.size) { grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#127909;</span><p>Koi video nahi</p></div>'; return; }
-    grid.innerHTML = snap.docs.map(d => {
-      const {url,title,category} = d.data();
-      const thumb = url.includes('youtube') ? `<img src="https://img.youtube.com/vi/${getYTId(url)}/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover">` : `<div style="font-size:2rem;opacity:.4">&#127909;</div>`;
-      return `<div class="media-item">
-        <div class="media-thumb">${thumb}</div>
-        <div class="media-info"><p title="${title}">${title}</p>
-        <div class="media-actions">
-          <span style="font-size:.68rem;color:var(--gold);background:rgba(201,168,76,.08);padding:.2rem .5rem;border-radius:2px">${category}</span>
-          <button class="media-del" onclick="deleteItem('videos','${d.id}')">&#128465;</button>
-        </div></div></div>`;
-    }).join('');
-  } catch(e) {}
-}
-
-function getYTId(url) {
-  const m = url.match(/[?&]v=([^&]+)/) || url.match(/youtu\.be\/([^?]+)/);
-  return m ? m[1] : '';
-}
-
-// UPLOAD CERT
-window.uploadCert = async () => {
+// CERT UPLOAD
+window.handleCertUpload = async () => {
   const file = document.getElementById('certFile').files[0];
   const name = document.getElementById('certName').value.trim();
   const owner = document.getElementById('certOwner').value;
   const year = document.getElementById('certYear').value;
   const desc = document.getElementById('certDesc').value;
-  if (!file || !name) { showToast('Name aur file dono zaroori hain!', 'error'); return; }
+  if (!file || !name) { toast('Name aur file zaroori hain!','error'); return; }
 
-  const prog = document.getElementById('certProgress');
+  const prog = document.getElementById('certProg');
   const bar = document.getElementById('certBar');
-  prog.style.display = 'block';
+  prog.style.display='block'; bar.style.width='50%';
 
-  const storRef = ref(storage, `certificates/${Date.now()}_${file.name}`);
-  const task = uploadBytesResumable(storRef, file);
-  task.on('state_changed',
-    snap => { bar.style.width = (snap.bytesTransferred/snap.totalBytes*100) + '%'; },
-    err => { showToast('Upload failed!', 'error'); },
-    async () => {
-      const url = await getDownloadURL(task.snapshot.ref);
-      await addDoc(collection(db,'certificates'), {url, name, owner, year, desc, type: file.type.includes('pdf')?'pdf':'image', createdAt: serverTimestamp()});
-      prog.style.display='none'; bar.style.width='0%';
-      showToast('Certificate upload ho gaya!', 'success');
-      document.getElementById('certName').value = '';
-      loadCerts();
-      loadDashboardStats();
-    }
-  );
+  try {
+    const result = await uploadToCloudinary(file, 'certificates');
+    bar.style.width='90%';
+    await addDoc(collection(db,'certificates'), {
+      url: result.secure_url,
+      publicId: result.public_id,
+      name, owner, year, desc,
+      fileType: file.type.includes('pdf') ? 'pdf' : 'image',
+      createdAt: serverTimestamp()
+    });
+    bar.style.width='100%';
+    setTimeout(()=>{ prog.style.display='none'; bar.style.width='0%'; },500);
+    toast('Certificate upload ho gaya!','success');
+    document.getElementById('certName').value='';
+    document.getElementById('certYear').value='';
+    document.getElementById('certFile').value='';
+    loadCerts('all');
+    loadStats();
+  } catch(e){ prog.style.display='none'; toast('Upload failed!','error'); }
 };
 
 // LOAD CERTS
-async function loadCerts(filterOwner='all') {
+window.loadCerts = async (filter='all') => {
   const grid = document.getElementById('certGrid');
+  grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:2rem"><div class="loading"></div></div>';
   try {
     const snap = await getDocs(query(collection(db,'certificates'), orderBy('createdAt','desc')));
-    const items = snap.docs.filter(d => filterOwner==='all' || d.data().owner===filterOwner);
-    if (!items.length) { grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128196;</span><p>Koi certificate nahi</p></div>'; return; }
-    grid.innerHTML = items.map(d => {
-      const {url,name,owner,year,type} = d.data();
-      const thumb = type==='pdf' ? `<div style="font-size:2rem;opacity:.5">&#128196;</div>` : `<img src="${url}" style="width:100%;height:100%;object-fit:cover">`;
+    const items = snap.docs.filter(d => filter==='all' || d.data().owner===filter);
+    if (!items.length) { grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#128196;</span><p>Koi certificate nahi</p></div>'; return; }
+    grid.innerHTML = items.map(d=>{
+      const {url,name,owner,year,fileType} = d.data();
+      const thumb = fileType==='pdf' ? '<div class="media-placeholder">&#128196;</div>' : `<img src="${url}" loading="lazy" alt="${name}">`;
       return `<div class="media-item">
         <div class="media-thumb">${thumb}</div>
         <div class="media-info"><p title="${name}">${name}</p>
-        <div class="media-actions">
-          <span style="font-size:.65rem;color:var(--gold);background:rgba(201,168,76,.08);padding:.18rem .45rem;border-radius:2px">${owner}</span>
-          <button class="media-del" onclick="deleteItem('certificates','${d.id}','${url}')">&#128465;</button>
+        <div class="media-actions"><span class="cat-tag">${owner}</span>
+        <button class="media-del" onclick="delItem('certificates','${d.id}','${d.data().publicId}')">&#128465;</button>
         </div></div></div>`;
     }).join('');
-  } catch(e) {}
-}
+  } catch(e){}
+};
 
-// SAVE POST
+// VIDEO
+window.saveVideo = async () => {
+  const title = document.getElementById('vidTitle').value.trim();
+  const url = document.getElementById('vidUrl').value.trim();
+  const cat = document.getElementById('vidCat').value;
+  if (!title || !url) { toast('Title aur URL zaroori hain!','error'); return; }
+  await addDoc(collection(db,'videos'), {title, url, category:cat, createdAt:serverTimestamp()});
+  toast('Video save ho gaya!','success');
+  document.getElementById('vidTitle').value='';
+  document.getElementById('vidUrl').value='';
+  loadVideos();
+  loadStats();
+};
+
+window.loadVideos = async () => {
+  const grid = document.getElementById('videoGrid');
+  try {
+    const snap = await getDocs(query(collection(db,'videos'), orderBy('createdAt','desc')));
+    if (!snap.size) { grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">&#127909;</span><p>Koi video nahi</p></div>'; return; }
+    grid.innerHTML = snap.docs.map(d=>{
+      const {url,title,category} = d.data();
+      const ytId = url.match(/(?:v=|youtu\.be\/)([^&?]+)/)?.[1];
+      const thumb = ytId ? `<img src="https://img.youtube.com/vi/${ytId}/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover">` : '<div class="media-placeholder">&#127909;</div>';
+      return `<div class="media-item">
+        <div class="media-thumb">${thumb}</div>
+        <div class="media-info"><p title="${title}">${title}</p>
+        <div class="media-actions"><span class="cat-tag">${category}</span>
+        <button class="media-del" onclick="delItem('videos','${d.id}')">&#128465;</button>
+        </div></div></div>`;
+    }).join('');
+  } catch(e){}
+};
+
+// POST
 window.savePost = async () => {
   const title = document.getElementById('postTitle').value.trim();
   const content = document.getElementById('postContent').value.trim();
-  const category = document.getElementById('postCategory').value;
+  const cat = document.getElementById('postCat').value;
   const status = document.getElementById('postStatus').value;
-  if (!title || !content) { showToast('Title aur content zaroori hain!', 'error'); return; }
-
-  let imageUrl = '';
-  const imgFile = document.getElementById('postImage').files[0];
-  if (imgFile) {
-    const storRef = ref(storage, `posts/${Date.now()}_${imgFile.name}`);
-    await uploadBytesResumable(storRef, imgFile);
-    imageUrl = await getDownloadURL(storRef);
-  }
-
-  await addDoc(collection(db,'posts'), {title, content, category, status, imageUrl, createdAt: serverTimestamp()});
-  showToast('Post publish ho gaya!', 'success');
-  document.getElementById('postTitle').value = '';
-  document.getElementById('postContent').value = '';
+  if (!title || !content) { toast('Title aur content zaroori hain!','error'); return; }
+  await addDoc(collection(db,'posts'), {title, content, category:cat, status, createdAt:serverTimestamp()});
+  toast('Post publish ho gaya!','success');
+  document.getElementById('postTitle').value='';
+  document.getElementById('postContent').value='';
   loadPosts();
-  loadDashboardStats();
+  loadStats();
 };
 
-// LOAD POSTS
-async function loadPosts() {
+window.loadPosts = async () => {
   const tbody = document.getElementById('postsList');
   try {
     const snap = await getDocs(query(collection(db,'posts'), orderBy('createdAt','desc')));
-    if (!snap.size) { tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><span class="empty-icon">&#128240;</span><p>Koi post nahi</p></div></td></tr>'; return; }
-    tbody.innerHTML = snap.docs.map(d => {
+    if (!snap.size) { tbody.innerHTML='<tr><td colspan="5"><div class="empty-state"><span class="empty-icon">&#128240;</span><p>Koi post nahi</p></div></td></tr>'; return; }
+    tbody.innerHTML = snap.docs.map(d=>{
       const {title,category,status,createdAt} = d.data();
-      const date = createdAt ? new Date(createdAt.seconds*1000).toLocaleDateString('en-IN') : 'N/A';
-      const badge = status==='published' ? 'badge-active' : 'badge-draft';
-      return `<tr>
-        <td><strong style="color:var(--white2)">${title}</strong></td>
-        <td>${category}</td><td>${date}</td>
-        <td><span class="badge ${badge}">${status}</span></td>
-        <td><button class="btn btn-red btn-sm" onclick="deleteItem('posts','${d.id}')">Delete</button></td>
-      </tr>`;
+      const date = createdAt ? new Date(createdAt.seconds*1000).toLocaleDateString('en-IN') : '-';
+      return `<tr><td><strong style="color:var(--white2)">${title}</strong></td><td>${category}</td><td>${date}</td>
+        <td><span class="badge ${status==='published'?'badge-active':'badge-draft'}">${status}</span></td>
+        <td><button class="btn btn-red btn-sm" onclick="delItem('posts','${d.id}')">Delete</button></td></tr>`;
     }).join('');
-  } catch(e) {}
-}
-
-// DELETE ITEM
-window.deleteItem = async (col, id, fileUrl='') => {
-  if (!confirm('Delete karna chahte ho?')) return;
-  await deleteDoc(doc(db, col, id));
-  if (fileUrl) try { await deleteObject(ref(storage, fileUrl)); } catch(e) {}
-  showToast('Delete ho gaya!', 'success');
-  if (col==='gallery') loadPhotos();
-  if (col==='videos') loadVideos();
-  if (col==='certificates') loadCerts();
-  if (col==='posts') loadPosts();
-  loadDashboardStats();
+  } catch(e){}
 };
 
-// FILTER MEDIA
-window.filterMedia = (type, val) => {
-  if (type==='photo') loadPhotos(val);
-  if (type==='cert') loadCerts(val);
+// PROFILE PHOTO UPLOAD
+window.uploadProfilePhoto = async () => {
+  const file = document.getElementById('profPhoto').files[0];
+  const who = document.getElementById('profSelect').value;
+  if (!file) return;
+  const prog=document.getElementById('profProg'), bar=document.getElementById('profBar');
+  prog.style.display='block'; bar.style.width='50%';
+  try {
+    const result = await uploadToCloudinary(file, 'profiles');
+    bar.style.width='90%';
+    await setDoc(doc(db,'profiles',who), {photoUrl:result.secure_url}, {merge:true});
+    bar.style.width='100%';
+    setTimeout(()=>{ prog.style.display='none'; bar.style.width='0%'; },500);
+    toast('Profile photo update ho gaya!','success');
+  } catch(e){ prog.style.display='none'; toast('Upload failed!','error'); }
 };
 
-// SAVE SOCIAL
-window.saveSocial = async () => {
-  const data = {
-    facebook: document.getElementById('socialFb').value,
-    instagram: document.getElementById('socialIg').value,
-    youtube: document.getElementById('socialYt').value,
-    whatsapp: document.getElementById('socialWa').value,
-    linkedin: document.getElementById('socialLi').value,
+window.saveProfile = async () => {
+  const who = document.getElementById('profSelect').value;
+  await setDoc(doc(db,'profiles',who), {
+    name: document.getElementById('profName').value,
+    role: document.getElementById('profRole').value,
+    bio: document.getElementById('profBio').value,
     updatedAt: serverTimestamp()
-  };
-  await setDoc(doc(db,'settings','social'), data);
-  showToast('Social links update ho gaye!', 'success');
+  }, {merge:true});
+  toast('Profile save ho gaya!','success');
 };
 
-// LOAD SOCIAL
+window.loadProfile = async () => {
+  const who = document.getElementById('profSelect').value;
+  try {
+    const snap = await getDoc(doc(db,'profiles',who));
+    if (snap.exists()) {
+      const d = snap.data();
+      document.getElementById('profName').value = d.name||'';
+      document.getElementById('profRole').value = d.role||'';
+      document.getElementById('profBio').value = d.bio||'';
+    }
+  } catch(e){}
+};
+
+// SOCIAL
+window.saveSocial = async () => {
+  await setDoc(doc(db,'settings','social'), {
+    facebook: document.getElementById('sFb').value,
+    instagram: document.getElementById('sIg').value,
+    youtube: document.getElementById('sYt').value,
+    whatsapp: document.getElementById('sWa').value,
+    linkedin: document.getElementById('sLi').value,
+    updatedAt: serverTimestamp()
+  });
+  toast('Social links save ho gaye!','success');
+};
+
 async function loadSocialLinks() {
   try {
     const snap = await getDoc(doc(db,'settings','social'));
     if (snap.exists()) {
-      const d = snap.data();
-      document.getElementById('socialFb').value = d.facebook || '';
-      document.getElementById('socialIg').value = d.instagram || '';
-      document.getElementById('socialYt').value = d.youtube || '';
-      document.getElementById('socialWa').value = d.whatsapp || '';
-      document.getElementById('socialLi').value = d.linkedin || '';
+      const d=snap.data();
+      document.getElementById('sFb').value=d.facebook||'';
+      document.getElementById('sIg').value=d.instagram||'';
+      document.getElementById('sYt').value=d.youtube||'';
+      document.getElementById('sWa').value=d.whatsapp||'';
+      document.getElementById('sLi').value=d.linkedin||'';
     }
-  } catch(e) {}
+  } catch(e){}
 }
 
-// SAVE CONTACT
+// CONTACT
 window.saveContact = async () => {
-  const data = {
-    name: document.getElementById('contactName').value,
-    phone: document.getElementById('contactPhone').value,
-    email: document.getElementById('contactEmail').value,
-    address: document.getElementById('contactAddress').value,
+  await setDoc(doc(db,'settings','contact'), {
+    name: document.getElementById('cName').value,
+    phone: document.getElementById('cPhone').value,
+    email: document.getElementById('cEmail').value,
+    address: document.getElementById('cAddr').value,
     updatedAt: serverTimestamp()
-  };
-  await setDoc(doc(db,'settings','contact'), data);
-  showToast('Contact info update ho gaya!', 'success');
+  });
+  toast('Contact info save ho gaya!','success');
 };
 
-// UPLOAD PROFILE PHOTO
-window.uploadProfilePhoto = async () => {
-  const file = document.getElementById('profilePhoto').files[0];
-  const instructor = document.getElementById('profileSelect').value;
-  if (!file) return;
-  const prog = document.getElementById('profileProgress');
-  const bar = document.getElementById('profileBar');
-  prog.style.display = 'block';
-  const storRef = ref(storage, `profiles/${instructor}_photo`);
-  const task = uploadBytesResumable(storRef, file);
-  task.on('state_changed',
-    snap => { bar.style.width = (snap.bytesTransferred/snap.totalBytes*100) + '%'; },
-    err => showToast('Upload failed!','error'),
-    async () => {
-      const url = await getDownloadURL(task.snapshot.ref);
-      await setDoc(doc(db,'profiles',instructor), {photoUrl: url}, {merge:true});
-      prog.style.display='none'; bar.style.width='0%';
-      showToast('Profile photo update ho gaya!', 'success');
-    }
-  );
-};
-
-// SAVE PROFILE
-window.saveProfile = async () => {
-  const instructor = document.getElementById('profileSelect').value;
-  const data = {
-    name: document.getElementById('profName').value,
-    role: document.getElementById('profRole').value,
-    bio: document.getElementById('profBio').value,
-    achievements: document.getElementById('profAchievements').value.split('\n').filter(Boolean),
-    updatedAt: serverTimestamp()
-  };
-  await setDoc(doc(db,'profiles',instructor), data, {merge:true});
-  showToast('Profile save ho gaya!', 'success');
-};
-
-// LOAD PROFILE
-window.loadProfile = async () => {
-  const instructor = document.getElementById('profileSelect').value;
+async function loadContactInfo() {
   try {
-    const snap = await getDoc(doc(db,'profiles',instructor));
+    const snap = await getDoc(doc(db,'settings','contact'));
     if (snap.exists()) {
-      const d = snap.data();
-      document.getElementById('profName').value = d.name || '';
-      document.getElementById('profRole').value = d.role || '';
-      document.getElementById('profBio').value = d.bio || '';
-      document.getElementById('profAchievements').value = (d.achievements||[]).join('\n');
+      const d=snap.data();
+      document.getElementById('cName').value=d.name||'Yuvraj Singh Thakur';
+      document.getElementById('cPhone').value=d.phone||'8959992195';
+      document.getElementById('cEmail').value=d.email||'ayuvrajsingh90@gmail.com';
+      document.getElementById('cAddr').value=d.address||'Club Ground, Chachai, District Anuppur, Madhya Pradesh — 484224';
     }
-  } catch(e) {}
-};
+  } catch(e){}
+}
 
-// CHANGE PASSWORD
-window.changePassword = async () => {
-  const np = document.getElementById('newPw').value;
-  const cp = document.getElementById('confirmPw').value;
-  if (np !== cp) { showToast('Passwords match nahi kar rahe!', 'error'); return; }
-  if (np.length < 6) { showToast('Password kam se kam 6 characters ka hona chahiye!', 'error'); return; }
+// PASSWORD
+window.changePw = async () => {
+  const np=document.getElementById('newPw').value;
+  const cp=document.getElementById('confPw').value;
+  if (np!==cp) { toast('Passwords match nahi kar rahe!','error'); return; }
+  if (np.length<6) { toast('6+ characters chahiye!','error'); return; }
   try {
     await updatePassword(auth.currentUser, np);
-    showToast('Password change ho gaya!', 'success');
-    document.getElementById('newPw').value = '';
-    document.getElementById('confirmPw').value = '';
+    toast('Password change ho gaya!','success');
+    document.getElementById('newPw').value='';
+    document.getElementById('confPw').value='';
   } catch(e) {
-    if (e.code === 'auth/requires-recent-login') {
-      showToast('Security ke liye pehle logout karke dobara login karo, phir password change karo.', 'error');
-    } else {
-      showToast('Error: ' + e.message, 'error');
-    }
+    if (e.code==='auth/requires-recent-login') toast('Pehle logout karke dobara login karo, phir change karo.','error');
+    else toast('Error: '+e.message,'error');
   }
 };
 
-// SECTION: load data when opened
-const sectionLoaders = {
-  gallery: loadPhotos,
-  videos: loadVideos,
-  certificates: loadCerts,
-  news: loadPosts,
-  profiles: loadProfile,
+// DELETE
+window.delItem = async (col, id, publicId='') => {
+  if (!confirm('Delete karna chahte ho?')) return;
+  await deleteDoc(doc(db,col,id));
+  if (publicId) {
+    try {
+      // Cloudinary delete via unsigned (needs server - skip for now)
+    } catch(e){}
+  }
+  toast('Delete ho gaya!','success');
+  if(col==='gallery') loadPhotos('all');
+  if(col==='videos') loadVideos();
+  if(col==='certificates') loadCerts('all');
+  if(col==='posts') loadPosts();
+  loadStats();
 };
 
-window._sectionLoaders = sectionLoaders;
-
+window._loaders = {gallery:()=>loadPhotos('all'), videos:loadVideos, certificates:()=>loadCerts('all'), news:loadPosts, profiles:loadProfile};
 </script>
 
 <script>
-// NAVIGATION
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+const secTitles = {dashboard:'Dashboard <span>Overview</span>',gallery:'Gallery <span>Photos</span>',videos:'Videos <span>&amp; Reels</span>',certificates:'Certificates <span>Manager</span>',news:'News <span>&amp; Posts</span>',profiles:'Instructor <span>Profiles</span>',social:'Social <span>Links</span>',contact:'Contact <span>Info</span>',password:'Change <span>Password</span>'};
+
+window.showSec = (id, el) => {
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('sec-'+id).classList.add('active');
-  event.currentTarget && event.currentTarget.classList.add('active');
-  
-  const titles = {
-    dashboard:'Dashboard <span>Overview</span>',
-    gallery:'Gallery <span>Photos</span>',
-    videos:'Videos <span>&amp; Reels</span>',
-    certificates:'Certificates <span>Manager</span>',
-    news:'News <span>&amp; Posts</span>',
-    profiles:'Instructor <span>Profiles</span>',
-    social:'Social <span>Links</span>',
-    contact:'Contact <span>Info</span>',
-    password:'Change <span>Password</span>'
-  };
-  document.getElementById('topbarTitle').innerHTML = titles[id] || id;
-  
-  if (window._sectionLoaders && window._sectionLoaders[id]) {
-    window._sectionLoaders[id]();
-  }
+  if (el) el.classList.add('active');
+  document.getElementById('topTitle').innerHTML = secTitles[id]||id;
+  if (window._loaders && window._loaders[id]) window._loaders[id]();
   closeSidebar();
-}
+};
 
-// CLOCK
-function updateClock() {
-  const now = new Date();
-  document.getElementById('clock').textContent = now.toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit'});
-}
-setInterval(updateClock, 1000);
-updateClock();
+function updateClock(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});}
+setInterval(updateClock,1000); updateClock();
 
-// MOBILE SIDEBAR
-function openSidebar() {
-  document.getElementById('sidebar').classList.add('open');
-  document.getElementById('overlay').classList.add('show');
-}
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('overlay').classList.remove('show');
-}
+function openSidebar(){document.getElementById('sidebar').classList.add('open');document.getElementById('overlay').classList.add('show');}
+function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
 </script>
 </body>
 </html>
