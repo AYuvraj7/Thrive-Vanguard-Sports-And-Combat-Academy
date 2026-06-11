@@ -525,17 +525,24 @@
         <input type="radio" name="belt" id="b7" class="br" value="Black"/><label for="b7" class="brl">⬛ Black</label>
       </div>
 
-      <div class="fsec">Payment Details</div>
-      <div class="fgrid">
-        <div class="fg"><label>Payment Mode *</label>
-          <select id="f_paymode"><option value="">Select</option><option>Cash</option><option>UPI</option><option>Bank Transfer</option></select>
-        </div>
-        <div class="fg"><label>Payment Date</label><input type="date" id="f_paydate"/></div>
-        <div class="fg"><label>Receipt / Ref. No.</label><input type="text" id="f_receipt" placeholder="Receipt or UPI ref no."/></div>
-        <div class="fg"><label>Amount Paid</label>
-          <select id="f_amtpaid"><option value="">Select</option><option value="800">₹800 — Full Amount (Admission + Registration)</option><option value="500">₹500 — Admission Fees Only</option><option value="300">₹300 — Registration Fees Only</option></select>
+      <div class="fsec">Payment — Razorpay</div>
+      <div class="payment-highlight">
+        <div class="ph-item"><div class="ph-amt">₹500</div><div class="ph-label">Admission</div></div>
+        <div class="ph-plus">+</div>
+        <div class="ph-item"><div class="ph-amt">₹300</div><div class="ph-label">Registration</div></div>
+        <div class="ph-eq">=</div>
+        <div class="ph-item"><div class="ph-total">₹800</div><div class="ph-total-label">Pay Now</div></div>
+      </div>
+      <div id="payStatusBox" style="display:none;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:6px;padding:12px 16px;margin-top:8px">
+        <div style="font-family:Rajdhani,sans-serif;font-size:0.8rem;color:#4ade80;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">✅ Payment Successful</div>
+        <div style="font-family:Inter,sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.6);line-height:1.8">
+          Payment ID: <span id="rzp_payment_id" style="color:#C9A84C;font-weight:600"></span><br/>
+          Amount: <span id="rzp_amount" style="color:#C9A84C;font-weight:600"></span><br/>
+          Date: <span id="rzp_date" style="color:#C9A84C;font-weight:600"></span>
         </div>
       </div>
+      <p id="payRequiredMsg" style="display:none;color:#f87171;font-family:Rajdhani,sans-serif;font-size:0.78rem;margin-top:6px;font-weight:700">⚠ Please complete Razorpay payment before submitting.</p>
+      <div style="display:none"></div>
 
       <div class="fsec">Undertaking &amp; Declaration</div>
       <div class="undertaking">
