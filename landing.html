@@ -548,7 +548,7 @@
     </div>
 
     <div class="modal-footer" id="formFooter">
-      <button class="btn-primary" id="submitBtn">📤 Submit via WhatsApp →</button>
+      <button class="btn-primary" id="payBtn" style="background:#2563eb">💳 Pay ₹800 &amp; Confirm Admission</button>
     </div>
 
     <div class="success-msg" id="successMsg">
@@ -560,8 +560,25 @@
   </div>
 </div>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
 (function(){
+  // EmailJS init - runs after lib loads
+  function initEmailJS(){
+    if(typeof emailjs !== "undefined"){
+      emailjs.init("user_placeholder");
+    } else {
+      setTimeout(initEmailJS, 200);
+    }
+  }
+  initEmailJS();
+
+  var paymentDone = false;
+  var rzpPaymentId = "";
+  var rzpAmount = "";
+  var rzpDate = "";
+
   function openModal(){
     document.getElementById("enrollModal").classList.add("active");
     document.body.style.overflow="hidden";
@@ -570,71 +587,158 @@
     document.getElementById("enrollModal").classList.remove("active");
     document.body.style.overflow="";
   }
-
   function getBelt(){
     var r=document.querySelectorAll("input[name=belt]");
     for(var i=0;i<r.length;i++) if(r[i].checked) return r[i].value;
     return "New Student";
   }
 
+  function getFormData(){
+    return {
+      name: document.getElementById("f_name").value.trim(),
+      dob: document.getElementById("f_dob").value,
+      father: document.getElementById("f_father").value.trim(),
+      mother: document.getElementById("f_mother").value.trim(),
+      age: document.getElementById("f_age").value,
+      gender: document.getElementById("f_gender").value,
+      mobile: document.getElementById("f_mobile").value.trim(),
+      whatsapp: document.getElementById("f_whatsapp").value.trim(),
+      address: document.getElementById("f_address").value.trim(),
+      school: document.getElementById("f_school").value.trim(),
+      cls: document.getElementById("f_class").value.trim(),
+      belt: getBelt()
+    };
+  }
+
+  function validateForm(d){
+    if(!d.name||!d.father||!d.mobile||!d.age||!d.gender||!d.address){
+      alert("Please fill in all required fields (marked *)."); return false;
+    }
+    if(parseInt(d.age)<5||parseInt(d.age)>14){
+      alert("Admission is open for ages 5 to 14 years only."); return false;
+    }
+    if(!document.getElementById("f_agree").checked){
+      alert("Please agree to the undertaking before submitting."); return false;
+    }
+    return true;
+  }
+
+  function startPayment(){
+    var d = getFormData();
+    if(!validateForm(d)) return;
+
+    var options = {
+      key: "rzp_live_T0Dncp3ouveD79",
+      amount: 80000,
+      currency: "INR",
+      name: "Thrive Vanguard Sports & Combat Academy",
+      description: "Student Admission — " + d.name,
+      image: "",
+      prefill: {
+        name: d.father,
+        contact: d.mobile
+      },
+      notes: {
+        student_name: d.name,
+        student_age: d.age,
+        belt_level: d.belt
+      },
+      theme: { color: "#C9A84C" },
+      handler: function(response){
+        paymentDone = true;
+        rzpPaymentId = response.razorpay_payment_id;
+        rzpAmount = "Rs 800";
+        rzpDate = new Date().toLocaleDateString("en-IN", {day:"2-digit",month:"short",year:"numeric"});
+
+        document.getElementById("rzp_payment_id").textContent = rzpPaymentId;
+        document.getElementById("rzp_amount").textContent = rzpAmount;
+        document.getElementById("rzp_date").textContent = rzpDate;
+        document.getElementById("payStatusBox").style.display = "block";
+        document.getElementById("payRequiredMsg").style.display = "none";
+
+        var pb = document.getElementById("payBtn");
+        pb.textContent = "Submit Admission Form";
+        pb.style.background = "#C9A84C";
+        pb.removeEventListener("click", startPayment);
+        pb.addEventListener("click", submitForm);
+      },
+      modal: {
+        ondismiss: function(){
+          console.log("Payment cancelled");
+        }
+      }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  }
+
   function submitForm(){
-    var agree=document.getElementById("f_agree").checked;
-    if(!agree){alert("Please agree to the undertaking before submitting.");return;}
-    var name=document.getElementById("f_name").value.trim();
-    var dob=document.getElementById("f_dob").value;
-    var father=document.getElementById("f_father").value.trim();
-    var mother=document.getElementById("f_mother").value.trim();
-    var age=document.getElementById("f_age").value;
-    var gender=document.getElementById("f_gender").value;
-    var mobile=document.getElementById("f_mobile").value.trim();
-    var whatsapp=document.getElementById("f_whatsapp").value.trim();
-    var address=document.getElementById("f_address").value.trim();
-    var school=document.getElementById("f_school").value.trim();
-    var cls=document.getElementById("f_class").value.trim();
-    var belt=getBelt();
-    var paymode=document.getElementById("f_paymode").value;
-    var paydate=document.getElementById("f_paydate").value;
-    var receipt=document.getElementById("f_receipt").value.trim();
-    var amtpaid=document.getElementById("f_amtpaid").value;
-
-    if(!name||!father||!mobile||!age||!gender||!address){
-      alert("Please fill in all required fields (marked *).");return;
+    if(!paymentDone){
+      document.getElementById("payRequiredMsg").style.display = "block";
+      return;
     }
-    if(parseInt(age)<5||parseInt(age)>14){
-      alert("Admission is open for ages 5 to 14 years only.");return;
-    }
+    var d = getFormData();
 
+    // Send email via EmailJS
+    var templateParams = {
+      to_email: "thrivesocietyofficial@gmail.com",
+      student_name: d.name,
+      dob: d.dob||"N/A",
+      father_name: d.father,
+      mother_name: d.mother||"N/A",
+      age: d.age,
+      gender: d.gender,
+      mobile: d.mobile,
+      whatsapp: d.whatsapp||d.mobile,
+      address: d.address,
+      school: d.school||"N/A",
+      class_std: d.cls||"N/A",
+      belt_level: d.belt,
+      payment_id: rzpPaymentId,
+      amount_paid: rzpAmount,
+      payment_date: rzpDate,
+      program: "Karate + Self Defence + Fitness + Yoga"
+    };
+
+    emailjs.send("service_placeholder","template_placeholder", templateParams)
+      .then(function(){
+        console.log("Email sent");
+      }, function(err){
+        console.log("Email error", err);
+      });
+
+    // Also send WhatsApp
     var lines=[
       "THRIVE VANGUARD - STUDENT ADMISSION",
       "------------------------------------",
       "STUDENT DETAILS",
-      "Name: "+name,
-      "DOB: "+(dob||"N/A"),
-      "Father: "+father,
-      "Mother: "+(mother||"N/A"),
-      "Age: "+age+" yrs | Gender: "+gender,
-      "Mobile: "+mobile,
-      "WhatsApp: "+(whatsapp||mobile),
-      "Address: "+address,
-      "School: "+(school||"N/A")+" | Class: "+(cls||"N/A"),
+      "Name: "+d.name,
+      "DOB: "+(d.dob||"N/A"),
+      "Father: "+d.father,
+      "Mother: "+(d.mother||"N/A"),
+      "Age: "+d.age+" yrs | Gender: "+d.gender,
+      "Mobile: "+d.mobile,
+      "WhatsApp: "+(d.whatsapp||d.mobile),
+      "Address: "+d.address,
+      "School: "+(d.school||"N/A")+" | Class: "+(d.cls||"N/A"),
       "",
       "ENROLLMENT",
       "Program: Karate + Self Defence + Fitness + Yoga",
-      "Current Belt: "+belt,
+      "Current Belt: "+d.belt,
       "",
       "PAYMENT",
-      "Amount Paid: Rs "+(amtpaid||"N/A"),
-      "Mode: "+(paymode||"N/A"),
-      "Date: "+(paydate||"N/A"),
-      "Receipt/Ref: "+(receipt||"N/A"),
+      "Payment ID: "+rzpPaymentId,
+      "Amount: "+rzpAmount,
+      "Date: "+rzpDate,
       "",
       "DECLARATION: Agreed",
       "------------------------------------",
       "Sent via Thrive Vanguard Website"
     ];
-    var msg=lines.join("\n");
-    var url="https://wa.me/918959992195?text="+encodeURIComponent(msg);
+    var msg = lines.join("\n");
+    var url = "https://wa.me/918959992195?text="+encodeURIComponent(msg);
     window.open(url,"_blank");
+
     document.getElementById("formContent").style.display="none";
     document.getElementById("formFooter").style.display="none";
     document.getElementById("successMsg").style.display="block";
@@ -644,13 +748,13 @@
     var nb=document.getElementById("navEnrollBtn");
     var hb=document.getElementById("heroEnrollBtn");
     var cb=document.getElementById("modalCloseBtn");
-    var sb=document.getElementById("submitBtn");
+    var pb=document.getElementById("payBtn");
     var ov=document.getElementById("enrollModal");
 
     if(nb) nb.addEventListener("click", openModal);
     if(hb) hb.addEventListener("click", openModal);
     if(cb) cb.addEventListener("click", closeModal);
-    if(sb) sb.addEventListener("click", submitForm);
+    if(pb) pb.addEventListener("click", startPayment);
     if(ov) ov.addEventListener("click", function(e){
       if(e.target===ov) closeModal();
     });
