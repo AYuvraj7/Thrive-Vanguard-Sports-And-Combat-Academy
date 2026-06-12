@@ -116,6 +116,7 @@ window.doLogin = async () => {
 
   try {
     await signInWithEmailAndPassword(auth, email, pass);
+    sessionStorage.setItem("tv_admin_auth", "true");
     document.getElementById('alertSuccess').classList.add('show');
     btn.innerHTML = '&#10003; Login Successful';
     setTimeout(() => window.location.href = 'admin-dashboard.html', 1200);
