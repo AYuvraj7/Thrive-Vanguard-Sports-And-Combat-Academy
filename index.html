@@ -44,7 +44,7 @@ body{-webkit-user-select:none;user-select:none}
 .mob-menu.open{display:flex}
 .mob-menu a{font-family:'Cinzel',serif;font-size:1.3rem;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:.2s}
 .mob-menu a:hover{color:var(--gold)}
-.mob-close{position:fixed;top:1rem;right:1rem;font-size:1.8rem;color:var(--gold);cursor:pointer;background:rgba(0,0,0,0.8);border:none;z-index:10000;width:3rem;height:3rem;display:flex;align-items:center;justify-content:center;border-radius:50%;}
+.mob-close{display:block;margin:2rem auto 0;font-size:2rem;color:var(--gold);cursor:pointer;background:none;border:2px solid var(--gold);border-radius:50%;width:3rem;height:3rem;line-height:1;}
 /* ===== HERO ===== */
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--black2)}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(201,168,76,.07) 0%,transparent 55%),radial-gradient(ellipse at 75% 20%,rgba(201,168,76,.04) 0%,transparent 50%)}
@@ -312,7 +312,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.18);padding
   </div>
 </nav>
 <div class="mob-menu" id="mob">
-  <button class="mob-close" onclick="document.getElementById('mob').classList.remove('open');document.body.style.overflow=''">&#x2715;</button>
+  <button <button class="mob-close" onclick="document.getElementById('mob').classList.remove('open');document.body.style.overflow=''">&#x2715;</button>
   <a href="#about" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">About</a>
   <a href="#founder" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">Founder</a>
   <a href="#instructors" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">Team</a>
@@ -321,6 +321,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.18);padding
   <a href="#org" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">Organization</a>
   <a href="#contact" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">Contact</a>
   <a href="pay-fees.html" onclick="this.closest('.mob-menu').classList.remove('open');document.body.style.overflow=''">Pay Fees</a>
+  <button class="mob-close" onclick="document.getElementById('mob').classList.remove('open');document.body.style.overflow=''">&#x2715;</button>
 </div>
 
 <!-- HERO -->
